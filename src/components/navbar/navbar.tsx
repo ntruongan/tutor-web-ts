@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import classnames from 'classnames';
 
 export const NavBar = () => {
-  const isLoggedIn = true;
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <div className={classnames(styles.navbarWrapper)}>
       <div className={classnames(styles.navbarItems)}>
@@ -31,11 +40,19 @@ export const NavBar = () => {
           <div className={classnames(styles.loginButton)}>
             Thông tin tài khoản
           </div>
-          <div className={classnames(styles.logoutButton)}>Đăng xuất</div>
+          <div
+            className={classnames(styles.logoutButton)}
+            onClick={handleLogout}>
+            Đăng xuất
+          </div>
         </div>
       ) : (
         <div className={classnames(styles.accountInformation)}>
-          <div className={classnames(styles.loginButton)}>Đăng nhập</div>
+          <div
+            className={classnames(styles.loginButton)}
+            onClick={handleLogin}>
+            Đăng nhập
+          </div>
           <div className={classnames(styles.signUpButton)}>Đăng ký</div>
         </div>
       )}
