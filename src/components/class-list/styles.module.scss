@@ -1,0 +1,16 @@
+:root {
+    --primary-bg-color: #f8f9fa; /* Light gray background */
+    --primary-text-color: #333; /* Dark gray text */
+    --secondary-bg-color: #007bff; /* Blue */
+    --secondary-text-color: #fff; /* White text */
+    --accent-color: #28a745; /* Green */
+    --hover-color: #e2e6ea; /* Light gray hover background */
+    --red-color: #9b4c3e; /* Light gray hover background */
+}
+
+/* Style for the entire navigation bar wrapper */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  gap: 20px; /* Adjust the gap between cards */
+}

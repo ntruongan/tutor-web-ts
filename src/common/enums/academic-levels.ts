@@ -4,3 +4,5 @@ enum AcademicLevels {
   High = 'High',
   College = 'College',
 }
+
+export default AcademicLevels;
