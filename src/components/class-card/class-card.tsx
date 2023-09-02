@@ -17,7 +17,7 @@ export const ClassCard = (props: CardProps) => {
     <div className={classnames(styles.classCardWrapper)}>
       <div className={classnames(styles.cardTitle)}>{title}</div>
       <div className={classnames(styles.cardBody)}>
-        <div className={classnames(styles.cardDetail)}></div>
+        <div className={classnames(styles.cardDetail)}>{'lớp ' + grade}</div>
         <div className={classnames(styles.listTutors)}></div>
         <div className={classnames(styles.regisBtn)}></div>
       </div>

@@ -13,4 +13,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
   gap: 20px; /* Adjust the gap between cards */
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto
 }
