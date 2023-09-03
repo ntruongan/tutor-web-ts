@@ -8,12 +8,31 @@
 //     --red-color: #9b4c3e; /* Light gray hover background */
 // }
 
+/* CSS for flip animation */
+.card-flip-container {
+  perspective: 1000px; /* Add 3D perspective to the container */
+}
+
+.card-flip {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 3s; /* Add a transition for smooth flip animation */
+}
+
+.card-flip-flipped {
+  transform: rotateY(180deg); /* Rotate the card by 360 degrees when flipped */
+  width: 100%;
+  height: 0%;
+}
+
 /* Style for the entire navigation bar wrapper */
 .classCardWrapper {
   background-color: #E9EEFF;
   border: 1px solid #ddd;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 500px;
 }
 
 /* Style for the navigation items container */
@@ -21,7 +40,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #830707;
+} 
 
 /* Style for each individual navigation item */
 .regisBtn p{

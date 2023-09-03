@@ -1,6 +1,10 @@
 interface TutorProps {
   name: string;
-  expertise: string;
+  gender: string;
+  academicLevel: string;
+  phoneNumber: string;
+  email: string;
+  avatar: string;
 }
 
 export default TutorProps;

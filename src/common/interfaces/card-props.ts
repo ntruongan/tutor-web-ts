@@ -7,15 +7,14 @@ interface CardProps {
   subject: string;
   address: string;
   salary: number;
-  // sessionPerWeek: number;
-  // timePerSession: number;
-  // daysInWeek: number[];
-  // requirement: string;
-  // contact: number;
+  sessionPerWeek: number;
+  timePerSession: number;
+  daysInWeek: number[];
   submitDate: string;
   tags: string[];
-  // academicLevels: AcademicLevels;
-  // registeredTutors: TutorProps[];
+  academicLevel: AcademicLevels;
+  registeredTutors: TutorProps[];
+  requirement: string;
 }
 
 export default CardProps;
