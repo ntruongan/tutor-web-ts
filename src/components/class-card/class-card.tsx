@@ -28,6 +28,8 @@ export const ClassCard = (props: CardProps) => {
     setShowAdditionalComponent(true);
   };
   // Function to toggle the flip state
+
+  // new idea: create same flip component for another registered component. Hide ClassCard when flipped (180deg) then bring the component back after register compenent is hidden
   const toggleFlip = () => {
     console.log('flipping');
     setIsFlipped(!isFlipped);
@@ -41,8 +43,8 @@ export const ClassCard = (props: CardProps) => {
   const numberOfTutors = registeredTutors.length;
   return (
     <div className='card-flip-container'>
-      <div className={classnames(styles.classCardWrapper)}>
-        <div className={cardClasses}>
+      <div className={cardClasses}>
+        <div className={classnames(styles.classCardWrapper)}>
           {!showAdditionalComponent && (
             <div className={classnames(styles.cardTitle)}>{title}</div>
           )}
@@ -105,15 +107,15 @@ export const ClassCard = (props: CardProps) => {
               </div>
             </div>
           )}
+          {showAdditionalComponent && <AdditionalComponent />}
+          {showAdditionalComponent && (
+            <div
+              className={classnames(styles.regisBtn)}
+              onClick={toggleFlip}>
+              <p>ĐĂNG KÝ NHẬN LỚP</p>
+            </div>
+          )}
         </div>
-        {showAdditionalComponent && <AdditionalComponent />}
-        {showAdditionalComponent && (
-          <div
-            className={classnames(styles.regisBtn)}
-            onClick={toggleFlip}>
-            <p>ĐĂNG KÝ NHẬN LỚP</p>
-          </div>
-        )}
       </div>
     </div>
   );
