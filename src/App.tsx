@@ -7,19 +7,12 @@ import { ClassList } from './components/class-list/class-list';
 
 function App() {
   return (
-    <>
-      {/* <NavBar /> */}
-      <ClassList
-        classList={[
-          { title: '123', grade: 12 },
-          { title: '124', grade: 12 },
-          { title: '124', grade: 12 },
-          { title: '124', grade: 12 },
-          { title: '124', grade: 12 },
-          { title: '124', grade: 12 },
-        ]}
-      />
-    </>
+    <div className='container'>
+      <NavBar />
+      <div className='content'>
+        <ClassList />
+      </div>
+    </div>
   );
 }
 

@@ -1,16 +1,16 @@
-:root {
-    --primary-bg-color: #f8f9fa; /* Light gray background */
-    --primary-text-color: #333; /* Dark gray text */
-    --secondary-bg-color: #007bff; /* Blue */
-    --secondary-text-color: #fff; /* White text */
-    --accent-color: #28a745; /* Green */
-    --hover-color: #e2e6ea; /* Light gray hover background */
-    --red-color: #9b4c3e; /* Light gray hover background */
-}
+// :root {
+//     --primary-bg-color: #f8f9fa; /* Light gray background */
+//     --primary-text-color: #333; /* Dark gray text */
+//     --secondary-bg-color: #007bff; /* Blue */
+//     --secondary-text-color: #fff; /* White text */
+//     --accent-color: #28a745; /* Green */
+//     --hover-color: #e2e6ea; /* Light gray hover background */
+//     --red-color: #9b4c3e; /* Light gray hover background */
+// }
 
 /* Style for the entire navigation bar wrapper */
 .classCardWrapper {
-  background-color: #c71d1d;
+  background-color: #E9EEFF;
   border: 1px solid #ddd;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -24,89 +24,71 @@
 }
 
 /* Style for each individual navigation item */
-.navbarItem {
-  margin-right: 20px;
-  color: var(--primary-text-color); /* Change this to your preferred text color */
-  text-decoration: none;
-}
-
-.accountInformation{
-  display: flex;
-  margin-right: 20px; /* Space between account info and right edge */
-}
-
-/* Style for the login button */
-.loginButton {
+.regisBtn p{
   margin-right: 10px;
   padding: 8px 16px;
-  background-color: var(--secondary-bg-color); 
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.logoutButton {
-  margin-right: 10px;
-  padding: 8px 16px;
-  background-color: var(--red-color); 
+  background-color: #93ACFF; 
   color: #fafafa;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  /* Remove or set width to auto */
+  width: auto;
+  /* Add display: inline-block */
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Style for the sign-up button */
-.signUpButton {
-  padding: 8px 16px;
-  background-color: var(--secondary-bg-color); 
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+.regisBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add this CSS to your styles module or stylesheet */
+.listTutors {
+  border: none; /* Remove any border */
+  padding: 8px 16px; /* Adjust padding as needed */
+  color: #333; /* Default text color */
+  font-weight: bold; /* Bold text */
   cursor: pointer;
+  transition: color 0.2s ease; /* Smooth text color transition */
 }
 
-/* Style for the dropdown container */
-.dropdown {
-  position: relative;
+.listTutors:hover {
+  color: #3b6592; /* Blue text color on hover */
 }
+.cardFooter {
+  color: #3b6592; /* Blue text color on hover */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+}
+
+.submitDate p{
+  color: #aae917; /* Blue text color on hover */
   
-  /* Style for the dropdown content */
-.dropdownContent {
-  opacity: 0; /* Initially hide the dropdown content */
-  visibility: hidden;
-  position: absolute;
-  background-color: var(--primary-bg-color);
-  min-width: 160px;
-  z-index: 1;
-  transform: translateY(10px); /* Move it down a bit for a smooth slide effect */
-  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-}
-  
-  /* Show the dropdown content when hovering over the dropdown container */
-.dropdown:hover .dropdownContent {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-  
-/* Style for dropdown links */
-.dropdownContent a {
-  color: var(--primary-text-color); /* Use primary text color */
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
 }
 
-/* Highlight dropdown links on hover */
-.dropdownContent a:hover {
-  background-color: var(--hover-color);
+.tags{
+  color: #141963; /* Blue text color on hover */
+  justify-content: right; 
+  display: flex;
 }
 
-.loginButton:hover, .signUpButton:hover {
-  background-color: var(--accent-color); /* Use accent color on button hover */
+.tag{
+  color: #141963; /* Blue text color on hover */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+  padding: 8px 16px;
+  background-color: #93ACFF; 
+  color: #fafafa;
+  border: none;
+  border-radius: 20px;
 }
 
-.hoverPointer {
+.tag:hover{
   cursor: pointer;
 }

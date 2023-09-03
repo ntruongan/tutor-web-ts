@@ -4,15 +4,16 @@ import TutorProps from './tutor-props';
 interface CardProps {
   title: string;
   grade: number;
-  // subject: string;
-  // address: string;
-  // salary: number;
+  subject: string;
+  address: string;
+  salary: number;
   // sessionPerWeek: number;
   // timePerSession: number;
   // daysInWeek: number[];
   // requirement: string;
   // contact: number;
-  // submittedDate: string;
+  submitDate: string;
+  tags: string[];
   // academicLevels: AcademicLevels;
   // registeredTutors: TutorProps[];
 }

@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: flex; /* Use flexbox to arrange components horizontally */
+  justify-content: space-between; /* Space components apart */
+  align-items: center; /* Vertically center components */
+  padding: 10px; /* Add some padding to create space between components */
+  background-color: #123123;
+}
