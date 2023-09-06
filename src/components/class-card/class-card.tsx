@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import classnames from 'classnames';
 import CardProps from '../../common/interfaces/card-props';
-import AdditionalComponent from '../class-registration/class-registration';
 
 export const ClassCard = (props: CardProps) => {
   const {
@@ -22,6 +21,10 @@ export const ClassCard = (props: CardProps) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // tutors
   const [isFlipped, setIsFlipped] = useState(false);
   const [showAdditionalComponent, setShowAdditionalComponent] = useState(false);
+
+  const doNothing = (a: string) => {
+    console.log(a);
+  };
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -107,12 +110,21 @@ export const ClassCard = (props: CardProps) => {
               </div>
             </div>
           )}
-          {showAdditionalComponent && <AdditionalComponent />}
-          {showAdditionalComponent && (
+          {/* Conditionally render the tutor registration input */}
+          {isFlipped && (
+            <div className={styles.tutorRegistrationForm}>
+              <input
+                type='text'
+                placeholder='Enter your name'
+                onChange={(e) => doNothing(e.target.value)}
+              />
+            </div>
+          )}
+          {isFlipped && (
             <div
               className={classnames(styles.regisBtn)}
               onClick={toggleFlip}>
-              <p>ĐĂNG KÝ NHẬN LỚP</p>
+              <p>Back</p>
             </div>
           )}
         </div>
