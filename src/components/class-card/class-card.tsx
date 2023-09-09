@@ -43,90 +43,79 @@ export const ClassCard = (props: CardProps) => {
   const cardClasses = classnames(styles['card-flip'], {
     [styles['card-flip-flipped']]: isFlipped,
   });
+
+  const mytest = classnames(styles['classCardWrapper'], {
+    [styles['card-flip-flipped']]: isFlipped,
+  });
+
   const numberOfTutors = registeredTutors.length;
   return (
     <div className='card-flip-container'>
-      <div className={cardClasses}>
-        <div className={classnames(styles.classCardWrapper)}>
-          {!showAdditionalComponent && (
-            <div className={classnames(styles.cardTitle)}>{title}</div>
-          )}
-          {!showAdditionalComponent && (
-            <div className={classnames(styles.cardBody)}>
-              <div className={classnames(styles.cardDetail)}>
-                <p>
-                  <b>Lớp</b>: {grade}
-                </p>
-                <p>
-                  <b>Lương</b>: {salary} đồng/tháng
-                </p>
-                <p>
-                  <b>Địa chỉ</b>: {address}
-                </p>
-                <p>
-                  <b>Môn học</b>: {subject}
-                </p>
-                <p>
-                  <b>Số buổi</b>: {sessionPerWeek}
-                </p>
-                <p>
-                  <b>Thời gian</b>: {timePerSession} phút
-                </p>
-                <p>
-                  <b>Các buổi</b>:{' '}
-                  {daysInWeek.map((d, index) => (
-                    <>
-                      {d === 1 ? 'Chủ nhật' : `Thứ ${d}`}
-                      {index < daysInWeek.length - 1 && ','}{' '}
-                    </>
-                  ))}
-                </p>
-                <p>
-                  <b>Học vấn</b>: {academicLevel}
-                </p>
-              </div>
-              <div
-                className={classnames(styles.listTutors)}
-                onClick={togglePopup}>
-                Danh sách đã đăng ký: {numberOfTutors} gia sư
-              </div>
-              {isPopupOpen && <div>hahahaha</div>}
-              <div
-                className={classnames(styles.regisBtn)}
-                onClick={toggleFlip}>
-                <p>ĐĂNG KÝ NHẬN LỚP</p>
-              </div>
-            </div>
-          )}
-          {!showAdditionalComponent && (
-            <div className={classnames(styles.cardFooter)}>
-              <div className={classnames(styles.submitDate)}>
-                <p>Ngày đăng: {submitDate}</p>
-              </div>
-              <div className={classnames(styles.tags)}>
-                {tags.map((tag) => (
-                  <div className={classnames(styles.tag)}>{tag}</div>
+      <div className={mytest}>
+        <div className={classnames(styles.cardFront)}>
+          <div className={classnames(styles.cardTitle)}>{title}</div>
+          <div className={classnames(styles.cardBody)}>
+            <div className={classnames(styles.cardDetail)}>
+              <p>
+                <b>Lớp</b>: {grade}
+              </p>
+              <p>
+                <b>Lương</b>: {salary} đồng/tháng
+              </p>
+              <p>
+                <b>Địa chỉ</b>: {address}
+              </p>
+              <p>
+                <b>Môn học</b>: {subject}
+              </p>
+              <p>
+                <b>Số buổi</b>: {sessionPerWeek}
+              </p>
+              <p>
+                <b>Thời gian</b>: {timePerSession} phút
+              </p>
+              <p>
+                <b>Các buổi</b>:{' '}
+                {daysInWeek.map((d, index) => (
+                  <>
+                    {d === 1 ? 'Chủ nhật' : `Thứ ${d}`}
+                    {index < daysInWeek.length - 1 && ','}{' '}
+                  </>
                 ))}
-              </div>
+              </p>
+              <p>
+                <b>Học vấn</b>: {academicLevel}
+              </p>
             </div>
-          )}
-          {/* Conditionally render the tutor registration input */}
-          {isFlipped && (
-            <div className={styles.tutorRegistrationForm}>
-              <input
-                type='text'
-                placeholder='Enter your name'
-                onChange={(e) => doNothing(e.target.value)}
-              />
+            <div
+              className={classnames(styles.listTutors)}
+              onClick={togglePopup}>
+              Danh sách đã đăng ký: {numberOfTutors} gia sư
             </div>
-          )}
-          {isFlipped && (
+            {isPopupOpen && <div>hahahaha</div>}
             <div
               className={classnames(styles.regisBtn)}
               onClick={toggleFlip}>
-              <p>Back</p>
+              <p>ĐĂNG KÝ NHẬN LỚP</p>
             </div>
-          )}
+          </div>
+          <div className={classnames(styles.cardFooter)}>
+            <div className={classnames(styles.submitDate)}>
+              <p>Ngày đăng: {submitDate}</p>
+            </div>
+            <div className={classnames(styles.tags)}>
+              {tags.map((tag) => (
+                <div className={classnames(styles.tag)}>{tag}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className={classnames(styles.cardBack)}>
+          <input
+            type='text'
+            placeholder='Enter your name'
+            onChange={(e) => doNothing(e.target.value)}
+          />
         </div>
       </div>
     </div>
